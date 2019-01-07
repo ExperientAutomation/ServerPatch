@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="4" failed="4" ignored="3" total="12" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="92589" started-at="2018-12-28T12:23:46Z" finished-at="2018-12-28T12:25:18Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="92589" started-at="2018-12-28T12:23:46Z" finished-at="2018-12-28T12:25:18Z">
+      <class name="TestCases.UATserverPatch">
+        <test-method status="PASS" signature="getColumn()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="getColumn" is-config="true" duration-ms="31" started-at="2018-12-28T12:23:46Z" finished-at="2018-12-28T12:23:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getColumn -->
+        <test-method status="PASS" signature="executeRow1()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow1" duration-ms="69051" started-at="2018-12-28T12:23:46Z" finished-at="2018-12-28T12:24:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow1 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="811" started-at="2018-12-28T12:25:05Z" finished-at="2018-12-28T12:25:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="SKIP" signature="executeRow2()[pri:1, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow2" duration-ms="1" started-at="2018-12-28T12:25:06Z" finished-at="2018-12-28T12:25:06Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow2(UATserverPatch.java:115)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow2 -->
+        <test-method status="FAIL" signature="executeRow2()[pri:1, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow2" duration-ms="0" started-at="2018-12-28T12:25:06Z" finished-at="2018-12-28T12:25:06Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow2(UATserverPatch.java:115)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.retryFailed(Invoker.java:838)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1009)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow2 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:06Z" finished-at="2018-12-28T12:25:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:09Z" finished-at="2018-12-28T12:25:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="SKIP" signature="executeRow3()[pri:2, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow3" duration-ms="0" started-at="2018-12-28T12:25:09Z" finished-at="2018-12-28T12:25:09Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow3(UATserverPatch.java:157)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow3 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:09Z" finished-at="2018-12-28T12:25:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="FAIL" signature="executeRow3()[pri:2, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow3" duration-ms="0" started-at="2018-12-28T12:25:09Z" finished-at="2018-12-28T12:25:09Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow3(UATserverPatch.java:157)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.retryFailed(Invoker.java:838)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1009)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow3 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:12Z" finished-at="2018-12-28T12:25:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="SKIP" signature="executeRow4()[pri:3, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow4" duration-ms="15" started-at="2018-12-28T12:25:12Z" finished-at="2018-12-28T12:25:12Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow4(UATserverPatch.java:201)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow4 -->
+        <test-method status="FAIL" signature="executeRow4()[pri:3, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow4" duration-ms="0" started-at="2018-12-28T12:25:12Z" finished-at="2018-12-28T12:25:12Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow4(UATserverPatch.java:201)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.retryFailed(Invoker.java:838)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1009)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow4 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:12Z" finished-at="2018-12-28T12:25:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:14Z" finished-at="2018-12-28T12:25:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="SKIP" signature="executeRow5()[pri:4, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow5" duration-ms="1" started-at="2018-12-28T12:25:14Z" finished-at="2018-12-28T12:25:14Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow5(UATserverPatch.java:225)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow5 -->
+        <test-method status="FAIL" signature="executeRow5()[pri:4, instance:TestCases.UATserverPatch@1d8d30f7]" name="executeRow5" duration-ms="0" started-at="2018-12-28T12:25:14Z" finished-at="2018-12-28T12:25:14Z">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T19:05:32.194Z'
+System info: host: 'KULANDASAMYC', ip: '172.17.9.18', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_91'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:131)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
+at TestCases.UATserverPatch.executeRow5(UATserverPatch.java:225)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.retryFailed(Invoker.java:838)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1009)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow5 -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:14Z" finished-at="2018-12-28T12:25:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="quitBrowser" is-config="true" duration-ms="0" started-at="2018-12-28T12:25:16Z" finished-at="2018-12-28T12:25:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="PASS" signature="sendReport()[pri:0, instance:TestCases.UATserverPatch@1d8d30f7]" name="sendReport" is-config="true" duration-ms="2778" started-at="2018-12-28T12:25:16Z" finished-at="2018-12-28T12:25:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendReport -->
+      </class> <!-- TestCases.UATserverPatch -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

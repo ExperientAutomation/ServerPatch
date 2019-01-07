@@ -1,0 +1,11 @@
+ChromeDriver=N://QA//R&DQA//Selenium//Drivers//chromedriver.exe
+
+ServerPatchFilePath=N://QA//R&DQA//Selenium//Chandra Workspace//Data//ServerPatchTesting
+
+ServerPatchFileURL=http://www.infotoday.me/it/qa/_layouts/15/start.aspx#/Network%20Services/Forms/AllItems.aspx?RootFolder=%2Fit%2Fqa%2FNetwork%20Services%2FServer%20Security%20Patching%2F2019&View=%7B0F294A26-EC56-4BAD-83F4-4A63D7B32C25%7D
+
+securemitUserID=rileytest
+securemitpsw=Bootsie76
+
+uatsecuusername=uatsecuremit\youngs
+uatpassword=Dizzyuat100
