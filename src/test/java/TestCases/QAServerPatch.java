@@ -25,8 +25,8 @@ import CustomReporter.emailReportQA;
 public class QAServerPatch extends BrowserFactory {
 
 //  Declare the Test type as Pre OR Post	
-//	public String testType = "Pre-Test";
-	public String testType = "Post-Test";
+	public String testType = "Pre-Test";
+//	public String testType = "Post-Test";
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 7;
@@ -49,7 +49,7 @@ public class QAServerPatch extends BrowserFactory {
 	@BeforeClass	
 	public void initialization() throws IOException, Exception {
 
-//		downloadedfile.downloadExcelSheet("QA Server");			
+		downloadedfile.downloadExcelSheet("QA Server");			
 		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
 		xls = new XlsUtil(filepath.getAbsolutePath());
 		getColumn();
