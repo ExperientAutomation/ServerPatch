@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -27,8 +28,8 @@ import utils.latestFile;
 public class PRODserverPatch extends BrowserFactory {
 
 	// Declare the Test type as Pre OR Post
-	public String testType = "Pre-Test";
-//	public String testType = "Post-Test";
+//	public String testType = "Pre-Test";
+	public String testType = "Post-Test";
 
 	// Declare the column for Server Name
 	int serverNameEnterpriseColumn = 1;
@@ -49,8 +50,17 @@ public class PRODserverPatch extends BrowserFactory {
 	public int getRow() {
 		return row;
 	}
+	
+	@BeforeClass	
+	public void initialization() throws IOException, Exception {
 
-	@BeforeSuite
+		downloadedfile.downloadExcelSheet("PROD Server Patch Automation");			
+		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
+		xls = new XlsUtil(filepath.getAbsolutePath());
+		getColumn();
+	}
+
+	
 	public int getColumn() {
 		if (testType == "Pre-Test") {
 			column = 9;
@@ -62,13 +72,9 @@ public class PRODserverPatch extends BrowserFactory {
 
 	@Test(priority = 0, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow2() throws IOException, Exception {
+		
 		row = 2;
 		
-		downloadedfile.downloadExcelSheet("PROD Server Patch Automation");	
-		
-		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
-		xls = new XlsUtil(filepath.getAbsolutePath());
-			
 		//Start the Chrome browser and login 		
 		driver = BrowserFactory.getBrowser("Chrome");
 		

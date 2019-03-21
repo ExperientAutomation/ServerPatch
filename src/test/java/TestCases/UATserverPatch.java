@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -42,7 +43,15 @@ public class UATserverPatch extends BrowserFactory {
 		return row;
 	}	
 	
-	@BeforeTest
+	@BeforeClass	
+	public void initialization() throws IOException, Exception {
+
+		downloadedfile.downloadExcelSheet("UAT Server");			
+		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
+		xls = new XlsUtil(filepath.getAbsolutePath());
+		getColumn();
+	}	
+
 	public int getColumn() throws Exception {				
 		
 		if (testType == "Pre-Test") {
@@ -55,12 +64,8 @@ public class UATserverPatch extends BrowserFactory {
 
 	@Test(priority = 0, retryAnalyzer = CustomReporter.RetryListener.class, enabled=true)
 	public void executeRow1() throws Exception {
-		row = 2;
 		
-		downloadedfile.downloadExcelSheet("UAT Server");	
-		
-		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
-		xls = new XlsUtil(filepath.getAbsolutePath());
+		row = 2;				
 			
 		//Start the Chrome browser and login 		
 		driver = BrowserFactory.getBrowser("Chrome");		

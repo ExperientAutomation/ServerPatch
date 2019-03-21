@@ -5,8 +5,8 @@
     <classes>
       <class name="TestCases.QAServerPatch">
         <methods>
+          <include name="executeRow16"/>
           <include name="sendReport"/>
-          <include name="executeRow6"/>
           <include name="tearDown"/>
           <include name="executeRow4"/>
           <include name="executeRow5"/>

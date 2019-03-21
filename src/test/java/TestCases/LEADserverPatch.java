@@ -1,5 +1,6 @@
 package TestCases;
 
+import java.io.IOException;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -34,11 +36,19 @@ public class LEADserverPatch extends BrowserFactory {
 	
 	WebDriverWait wait;
 	
-	/*public int getRow() {
+	public int getRow() {
 		return row;
-	}*/
+	}
+	
+	@BeforeClass	
+	public void initialization() throws IOException, Exception {
 
-	@BeforeSuite
+		downloadedfile.downloadExcelSheet("LEAD Server");			
+		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
+		xls = new XlsUtil(filepath.getAbsolutePath());
+		getColumn();
+	}
+
 	public int getColumn() {
 
 		if (testType.equals("Pre-Test")) {
@@ -47,17 +57,11 @@ public class LEADserverPatch extends BrowserFactory {
 			column = 10;
 		}
 		return column;
-	}
-
-	
+	}	
 
 	@Test(priority = 0, enabled = true)
-	public void executeRow2to9() throws Exception {
-		
-		downloadedfile.downloadExcelSheet("LEAD Server");	
-		
-		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
-		xls = new XlsUtil(filepath.getAbsolutePath());
+	public void executeRow2to9() throws Exception {	
+	
 
 		for (row = 2; row <= 9; row++) {
 			
