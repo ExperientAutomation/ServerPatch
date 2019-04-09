@@ -1,61 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" ignored="3" total="8" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="495390" started-at="2019-03-21T07:54:37Z" finished-at="2019-03-21T08:02:52Z">
+  <suite name="Default suite" duration-ms="366102" started-at="2019-04-09T05:59:40Z" finished-at="2019-04-09T06:05:47Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="495390" started-at="2019-03-21T07:54:37Z" finished-at="2019-03-21T08:02:52Z">
-      <class name="TestCases.LEADserverPatch">
-        <test-method status="PASS" signature="initialization()[pri:0, instance:TestCases.LEADserverPatch@1794d431]" name="initialization" is-config="true" duration-ms="28930" started-at="2019-03-21T07:54:37Z" finished-at="2019-03-21T07:55:06Z">
+    <test name="Default test" duration-ms="366102" started-at="2019-04-09T05:59:40Z" finished-at="2019-04-09T06:05:47Z">
+      <class name="TestCases.UATserverPatch">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:TestCases.UATserverPatch@53b32d7]" name="initialization" is-config="true" duration-ms="156858" started-at="2019-04-09T05:59:40Z" finished-at="2019-04-09T06:02:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method status="PASS" signature="executeRow2to9()[pri:0, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow2to9" duration-ms="42323" started-at="2019-03-21T07:55:06Z" finished-at="2019-03-21T07:55:48Z">
+        <test-method status="PASS" signature="executeRow1()[pri:0, instance:TestCases.UATserverPatch@53b32d7]" name="executeRow1" duration-ms="28960" started-at="2019-04-09T06:02:17Z" finished-at="2019-04-09T06:02:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow2to9 -->
-        <test-method status="PASS" signature="executeRow10to13()[pri:1, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow10to13" duration-ms="70624" started-at="2019-03-21T07:55:48Z" finished-at="2019-03-21T07:56:59Z">
+        </test-method> <!-- executeRow1 -->
+        <test-method status="PASS" signature="executeRow2()[pri:1, instance:TestCases.UATserverPatch@53b32d7]" name="executeRow2" duration-ms="3791" started-at="2019-04-09T06:02:49Z" finished-at="2019-04-09T06:02:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow10to13 -->
-        <test-method status="PASS" signature="executeRow34to37()[pri:2, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow34to37" duration-ms="36393" started-at="2019-03-21T07:56:59Z" finished-at="2019-03-21T07:57:35Z">
+        </test-method> <!-- executeRow2 -->
+        <test-method status="PASS" signature="executeRow3()[pri:2, instance:TestCases.UATserverPatch@53b32d7]" name="executeRow3" duration-ms="73333" started-at="2019-04-09T06:02:55Z" finished-at="2019-04-09T06:04:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow34to37 -->
-        <test-method status="PASS" signature="executeRows14to17()[pri:3, instance:TestCases.LEADserverPatch@1794d431]" name="executeRows14to17" duration-ms="21058" started-at="2019-03-21T07:57:35Z" finished-at="2019-03-21T07:57:56Z">
+        </test-method> <!-- executeRow3 -->
+        <test-method status="PASS" signature="executeRow4()[pri:3, instance:TestCases.UATserverPatch@53b32d7]" name="executeRow4" duration-ms="13994" started-at="2019-04-09T06:04:11Z" finished-at="2019-04-09T06:04:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRows14to17 -->
-        <test-method status="PASS" signature="executeRow18to21()[pri:4, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow18to21" duration-ms="125434" started-at="2019-03-21T07:57:56Z" finished-at="2019-03-21T08:00:02Z">
+        </test-method> <!-- executeRow4 -->
+        <test-method status="PASS" signature="executeRow5()[pri:4, instance:TestCases.UATserverPatch@53b32d7]" name="executeRow5" duration-ms="75104" started-at="2019-04-09T06:04:27Z" finished-at="2019-04-09T06:05:42Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow18to21 -->
-        <test-method status="PASS" signature="executeRow30to33()[pri:5, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow30to33" duration-ms="17446" started-at="2019-03-21T08:00:02Z" finished-at="2019-03-21T08:00:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow30to33 -->
-        <test-method status="PASS" signature="executeRow42to45()[pri:6, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow42to45" duration-ms="17600" started-at="2019-03-21T08:00:19Z" finished-at="2019-03-21T08:00:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow42to45 -->
-        <test-method status="PASS" signature="executeRow46to49()[pri:7, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow46to49" duration-ms="111561" started-at="2019-03-21T08:00:37Z" finished-at="2019-03-21T08:02:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow46to49 -->
-        <test-method status="PASS" signature="executeRow51to54()[pri:8, instance:TestCases.LEADserverPatch@1794d431]" name="executeRow51to54" duration-ms="22388" started-at="2019-03-21T08:02:28Z" finished-at="2019-03-21T08:02:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow51to54 -->
-        <test-method status="PASS" signature="sendReport()[pri:0, instance:TestCases.LEADserverPatch@1794d431]" name="sendReport" is-config="true" duration-ms="1506" started-at="2019-03-21T08:02:51Z" finished-at="2019-03-21T08:02:52Z">
+        </test-method> <!-- executeRow5 -->
+        <test-method status="PASS" signature="sendReport()[pri:0, instance:TestCases.UATserverPatch@53b32d7]" name="sendReport" is-config="true" duration-ms="1329" started-at="2019-04-09T06:05:44Z" finished-at="2019-04-09T06:05:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendReport -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1794d431]" name="tearDown" is-config="true" duration-ms="1544" started-at="2019-03-21T08:02:52Z" finished-at="2019-03-21T08:02:54Z">
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:TestCases.UATserverPatch@53b32d7]" name="quitBrowser" is-config="true" duration-ms="1229" started-at="2019-04-09T06:05:45Z" finished-at="2019-04-09T06:05:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- TestCases.LEADserverPatch -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- TestCases.UATserverPatch -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

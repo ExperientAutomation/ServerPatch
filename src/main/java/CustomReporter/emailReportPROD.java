@@ -23,7 +23,6 @@ public class emailReportPROD {
 
 //    final String username = config.LoginCredentails("USER_NAME");	
     final String username = config.LoginCredentails("USER_EMAILID");
-//    final String password = "%6yhnbgT";
 
     Properties props = new Properties();
     props.put("mail.smtp.auth", false);

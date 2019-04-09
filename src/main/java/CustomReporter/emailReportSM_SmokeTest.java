@@ -1,9 +1,6 @@
 package CustomReporter;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
-import javax.activation.*;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
@@ -12,10 +9,7 @@ import javax.mail.internet.MimeMultipart;
 
 import org.testng.annotations.Test;
 
-import TestCases.QAServerPatch;
-import TestCases.UATserverPatch;
 import utils.ConfigReader;
-import utils.XlsUtil;
 
 public class emailReportSM_SmokeTest {
 	
