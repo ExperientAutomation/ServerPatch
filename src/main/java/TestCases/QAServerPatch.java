@@ -12,7 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import utils.BrowserFactory;
@@ -21,7 +21,7 @@ import utils.XlsUtil;
 import utils.latestFile;
 import CustomReporter.emailReportQA;
 
-//@Listeners(CustomReporter.TesgNGListenerQAServerPatch.class)
+@Listeners(CustomReporter.TesgNGListenerQAServerPatch.class)
 public class QAServerPatch extends BrowserFactory {
 
 //  Declare the Test type as Pre OR Post	
@@ -50,7 +50,7 @@ public class QAServerPatch extends BrowserFactory {
 	@BeforeClass	
 	public void initialization() throws IOException, Exception {
 
-		downloadedfile.downloadExcelSheet("QA Server");			
+//		downloadedfile.downloadExcelSheet("QA Server");			
 		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
 		xls = new XlsUtil(filepath.getAbsolutePath());
 		getColumn();
@@ -148,11 +148,9 @@ public class QAServerPatch extends BrowserFactory {
 		}
 		if(showAllError.length()>0)	System.out.println(showAllError.toString() + "  had error");
 
-		if (results.contains(false)) {
-			Assert.fail("One of the links not working in Row4");
-		}
-		
 		System.out.println("Test for row - "+row+" executed successfully");
+		
+		if (results.contains(false)) Assert.fail("One of the links not working in Row-"+row);			
 	}
 
 	@Test(priority = 1,enabled = true)
@@ -172,8 +170,8 @@ public class QAServerPatch extends BrowserFactory {
 		System.out.println("URL-"+Row5Link);
 		driver.get(Row5Link.trim());
 		
-		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
-		login.login(driver);
+//		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
+//		login.login(driver);
 
 		String Row5Showcode = xls.getCellData("Stage Servers", showCodeColumn, row).trim().substring(0, 6);
 		driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(Row5Showcode);
@@ -228,9 +226,10 @@ public class QAServerPatch extends BrowserFactory {
 		}
 		if(showAllError.length()>0)	System.out.println(showAllError.toString() + "  had error");
 		
-		if (results.contains(false)) {
-			Assert.fail("One of the links not working in row "+row);
-		}
+		System.out.println("Test for row - "+row+" executed successfully");
+		
+		if (results.contains(false)) Assert.fail("One of the links not working in row "+row);
+		
 	}
 
 	@Test(priority = 2, enabled = true)
@@ -246,8 +245,8 @@ public class QAServerPatch extends BrowserFactory {
 		driver.get(Row6Link.trim());			
 
 		// Log in to Report Manager		
-		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
-		login.login(driver);
+//		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
+//		login.login(driver);
 		
 		// Choose the showcode from the dropdown
 
@@ -271,6 +270,7 @@ public class QAServerPatch extends BrowserFactory {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@id='LabelReportName']")));
 		WebElement reportTable = driver.findElement(By.xpath("//span[@id='LabelReportName']"));
 		Assert.assertEquals(true, reportTable.isDisplayed());
+		System.out.println("Test for row - "+row+" executed successfully");
 	}
 
 	@Test(priority = 5,enabled = true)
@@ -352,10 +352,10 @@ public class QAServerPatch extends BrowserFactory {
 			}
 		}
 		if(showAllError.length()>0)	System.out.println(showAllError.toString() + "  had error");
+		
+		System.out.println("Test for row - "+row+" executed successfully");
 
-		if (results.contains(false)) {
-			Assert.fail("One of the links not working in Row9");
-		}
+		if (results.contains(false)) Assert.fail("One of the links not working in Row-"+row);
 	}
 
 	@Test(priority = 6, enabled = true)
@@ -451,6 +451,8 @@ public class QAServerPatch extends BrowserFactory {
 		//Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'Error')]")).size()>0 , "Page has Error");
 		
 		System.out.println("Test for row - "+row+" executed successfully");
+		if (results.contains(false)) Assert.fail("One of the links not working in Row-"+row);
+		
 	}
 	
 	@Test(priority =9, enabled = true)
@@ -499,6 +501,8 @@ public class QAServerPatch extends BrowserFactory {
 		//Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'Error')]")).size()>0 , "Page has Error");
 	
 		System.out.println("Test for row - "+row+" executed successfully");
+		
+		if (results.contains(false)) Assert.fail("One of the links not working in Row-"+row);
 	}
 		
 	@Test(priority = 10, enabled = true)
@@ -532,7 +536,7 @@ public class QAServerPatch extends BrowserFactory {
 		Assert.assertFalse(driver.getTitle().toLowerCase().contains("Not Found"), "Page shows 'Not Found' error");
 //		Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'Error')]")).size()>0 , "Page has Error");		
 		System.out.println("Test for row - "+row+" executed successfully");
-		driver.close();
+//		driver.close();
 	}
 
 	@Test(priority = 11, enabled = true)

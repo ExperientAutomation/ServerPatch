@@ -3,14 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.PRODserverPatch">
+      <class name="TestCases.UATserverPatch">
         <methods>
-          <include name="sendReport"/>
-          <include name="executeRow6"/>
           <include name="quitBrowser"/>
           <include name="initialization"/>
+          <include name="executeRow2"/>
+          <include name="executeRow5"/>
+          <include name="executeRow3"/>
+          <include name="sendReport"/>
+          <include name="executeRow4"/>
+          <include name="executeRow1"/>
         </methods>
-      </class> <!-- TestCases.PRODserverPatch -->
+      </class> <!-- TestCases.UATserverPatch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

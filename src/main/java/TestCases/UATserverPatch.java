@@ -22,8 +22,8 @@ import utils.latestFile;
 public class UATserverPatch extends BrowserFactory {
 
 	// Declare the Test type as Pre OR Post
-	public String testType = "Pre-Test";
-//	public String testType = "Post-Test";
+//	public String testType = "Pre-Test";
+	public String testType = "Post-Test";
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 5;

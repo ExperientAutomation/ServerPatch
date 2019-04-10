@@ -66,7 +66,8 @@ public class BrowserFactory {
 					driver = new ChromeDriver();
 					drivers.put("Chrome", driver);
 					driver.manage().window().maximize();
-					driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+					driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 				}
 				break;
 
@@ -80,7 +81,7 @@ public class BrowserFactory {
 					driver.manage().window().maximize();
 					drivers.put("ChromeOptions", driver);
 					driver.manage().window().maximize();
-					driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+					driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 				}
 				break;
 			}
