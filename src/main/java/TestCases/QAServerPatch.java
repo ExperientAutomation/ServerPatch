@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -26,8 +28,8 @@ public class QAServerPatch extends BrowserFactory {
 
 //  Declare the Test type as Pre OR Post	
 	
-//	public String testType = "Pre-Test";
-	public String testType = "Post-Test";
+	public String testType = "Pre-Test";
+//	public String testType = "Post-Test";
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 7;
@@ -50,7 +52,7 @@ public class QAServerPatch extends BrowserFactory {
 	@BeforeClass	
 	public void initialization() throws IOException, Exception {
 
-//		downloadedfile.downloadExcelSheet("QA Server");			
+		downloadedfile.downloadExcelSheet("QA Server");			
 		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
 		xls = new XlsUtil(filepath.getAbsolutePath());
 		getColumn();
@@ -171,7 +173,7 @@ public class QAServerPatch extends BrowserFactory {
 		driver.get(Row5Link.trim());
 		
 //		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
-//		login.login(driver);
+		login.login(driver);
 
 		String Row5Showcode = xls.getCellData("Stage Servers", showCodeColumn, row).trim().substring(0, 6);
 		driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(Row5Showcode);
@@ -246,7 +248,7 @@ public class QAServerPatch extends BrowserFactory {
 
 		// Log in to Report Manager		
 //		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
-//		login.login(driver);
+		login.login(driver);
 		
 		// Choose the showcode from the dropdown
 
@@ -283,17 +285,18 @@ public class QAServerPatch extends BrowserFactory {
 		
 		//Start the Chrome browser and login 		
 		driver = BrowserFactory.getBrowser("Chrome");
+		wait = new WebDriverWait(driver, 100);
 		
 		String Row9Link = xls.getCellData("Stage Servers", LinkColumn, row);
 		driver.get(Row9Link.trim());
 		
-		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
+//		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
 		login.login(driver);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='inputShowCode']")));
 
 		String Row9Showcode = xls.getCellData("Stage Servers", showCodeColumn, row).trim().substring(0, 6);
-		driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(Row9Showcode);
+		driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(Row9Showcode,Keys.ENTER);
 		driver.findElement(By.xpath("//input[@value='Go!']")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("ButtonSave")));
 		System.out.println("Focused to the ShowCode: "+Row9Showcode);
@@ -419,9 +422,10 @@ public class QAServerPatch extends BrowserFactory {
 		
 		
 		//Login to showman
-		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
+//		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
 		login.login(driver);
 		
+		driver.navigate().refresh();
 		// Creating a list to store all the results to fail the method if atleast one result is failed.
 			List<Boolean> results = new ArrayList<Boolean>();
 				
@@ -469,9 +473,11 @@ public class QAServerPatch extends BrowserFactory {
 		driver.get(Row13Link.trim());
 				
 		//Login to showman
-		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
+//		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
 		login.login(driver);
-				
+			
+		driver.navigate().refresh();
+		
 				// Creating a list to store all the results to fail the method if atleast one result is failed.
 					List<Boolean> results = new ArrayList<Boolean>();
 						
@@ -585,7 +591,7 @@ public class QAServerPatch extends BrowserFactory {
 			return result;
 		}
 	
-	@AfterTest(enabled = true)
+	@AfterMethod(enabled = true)
 	public void tearDown() throws Exception {
 		driver.quit();		
 	}

@@ -13,7 +13,8 @@ public class smlogin {
  	
 	public void login(WebDriver driver){
 		
-		driver.findElement(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).sendKeys(config.LoginCredentails("USER_NAME"), Keys.TAB, config.LoginCredentails("PASSWORD"), Keys.ENTER);
+//		driver.findElement(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).sendKeys(config.LoginCredentails("USER_NAME"), Keys.TAB, config.LoginCredentails("PASSWORD"), Keys.ENTER);
+		driver.findElement(By.xpath("//a[@class='button large expanded']")).click();
 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 

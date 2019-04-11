@@ -29,7 +29,7 @@ public class ServerPatchURL extends BrowserFactory {
 		Formatter fmt = new Formatter();
 		Calendar now = Calendar.getInstance();
 		fmt.format("%tB", now);
-		System.out.println(fmt);
+		System.out.println("Selected Month-"+fmt);
 		
 		driver.findElement(By.xpath("//div[@class='ms-vb  itx']/a[contains(.,'"+fmt+"')]")).click();		
 		driver.findElement(By.xpath("//div[@class='ms-vb  itx']/a[contains(.,'"+TestName+"')]")).click();
@@ -41,6 +41,7 @@ public class ServerPatchURL extends BrowserFactory {
 		File dec = new File(config.getServerPatchFilePath());		
 		FileUtils.copyFileToDirectory(source, dec);
 		Thread.sleep(2000);
-		System.out.println("The file is copied from Download location to Server Patch Location");				
+		System.out.println("The file is copied from Download location to Server Patch Location");
+		driver.close();
 	}	
 }

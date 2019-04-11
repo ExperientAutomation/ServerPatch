@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -63,7 +64,7 @@ public class UATserverPatch extends BrowserFactory {
 	}
 
 	@Test(priority = 0, retryAnalyzer = CustomReporter.RetryListener.class, enabled=true)
-	public void executeRow1() throws Exception {
+	public void executeRow2() throws Exception {
 		
 		row = 2;				
 			
@@ -102,50 +103,9 @@ public class UATserverPatch extends BrowserFactory {
 		//Validate the server name
 		Assert.assertTrue(element.getText().contains(Row2ServerName.trim()), element.getText()+" was appeared instead of "+Row2ServerName);
 
-		System.out.println("Test for Row 2 executed successfully");
+		System.out.println("Test for Row-"+row+" executed successfully");
 		driver.findElement(By.xpath("//a[@class='Logout']")).click();
 		
-
-	}
-
-	@Test(priority = 1, retryAnalyzer = CustomReporter.RetryListener.class, enabled=true)
-	public void executeRow2() throws IOException{
-		row = 2;
-		
-		//Start the Chrome browser and login 		
-		driver = BrowserFactory.getBrowser("Chrome");
-		
-		String Row3Link = xls.getCellData("Pre Req Servers", LinkColumn, row);
-		driver.get(Row3Link.trim());
-		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-		login.login(driver);
-		wait = new WebDriverWait(driver, 200);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Logout')]")));
-		Assert.assertTrue(driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).isDisplayed(),"Could not Login");
-		
-		//get the showcode from excel sheet
-		String Row3Showcode = xls.getCellData("Pre Req Servers", showCodeColumn, row);
-
-		driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(Row3Showcode.trim());
-		driver.findElement(By.xpath("//input[@value='Go!']")).click();
-		
-		System.out.println("Focused to the ShowCode");
-
-		driver.navigate().refresh();
-		
-		WebElement element = driver.findElement(By.id("CellServerName"));
-
-		String Row3ServerName = xls.getCellData("Pre Req Servers", serverNameColumn, row);
-		
-		// Validate the server name
-		Assert.assertTrue(element.getText().contains(Row3ServerName.trim()),element.getText() + " was appeared instead of " + Row3ServerName);
-
-		System.out.println("Test for Row 3 executed successfully");
-		driver.findElement(By.xpath("//a[@class='Logout']")).click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.println("Logged Out Successfully");
 
 	}
 
@@ -188,7 +148,7 @@ public class UATserverPatch extends BrowserFactory {
 		//Validate the server name
 		Assert.assertTrue(element1.getText().contains("FRQAPROD02") ? true : element1.getText().contains("FRQAPROD03"), element1.getText()+" was appeared instead");
 
-		System.out.println("Test for Row 4 executed successfully");
+		System.out.println("Test for Row-"+row+" executed successfully");
 		driver.findElement(By.xpath("//a[@class='Logout']")).click();
 		System.out.println("Logged Out Successfully");
 
@@ -211,9 +171,9 @@ public class UATserverPatch extends BrowserFactory {
 		Assert.assertFalse(driver.getTitle().toLowerCase().contains("404"), "Page shows 404 Error");
 		Assert.assertFalse(driver.getTitle().toLowerCase().contains("403"), "Page shows 403 Error");
 		Assert.assertFalse(driver.getTitle().toLowerCase().contains("Not Found"), "Page shows 'Not Found' error");
-		Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'Error')]")).size()>0 , "Page has Error");
+//		Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'Error')]")).size()>0 , "Page has Error");
 		
-		System.out.println("Test for Row 5 executed successfully");
+		System.out.println("Test for Row-"+row+" executed successfully");
 	}
 
 	@Test(priority = 4, retryAnalyzer = CustomReporter.RetryListener.class, enabled=true)
@@ -251,121 +211,13 @@ public class UATserverPatch extends BrowserFactory {
 		//Validate the server Name
 		Assert.assertTrue(element.getText().contains(Row6ServerName.trim()),element.getText() + " was appeared instead of " + Row6ServerName);
 
-		System.out.println("Test for Row 6 executed successfully");
+		System.out.println("Test for Row-"+row+" executed successfully");
 		driver.findElement(By.xpath("//a[@class='Logout']")).click();
 		System.out.println("Logged Out Successfully");
 
 	}
 
-	@Test(priority = 5, retryAnalyzer = CustomReporter.RetryListener.class, enabled=false)
-	public void executeRow6() throws IOException{
-
-		row = 6;
-		
-		//Start the Chrome browser and login 		
-		driver = BrowserFactory.getBrowser("Chrome");
-		
-		String Row7Link = xls.getCellData("Pre Req Servers", LinkColumn, row);
-		driver.get(Row7Link.trim());
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		login.login(driver);
-		wait = new WebDriverWait(driver, 200);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Logout')]")));
-		Assert.assertTrue(driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).isDisplayed(),"Could not Login");
-
-		//Get the showcode from excel
-		String Row7Showcode = xls.getCellData("Pre Req Servers", showCodeColumn, row);
-
-		driver.findElement(By.xpath("//input[@class='inputShowCode']")).sendKeys(Row7Showcode.trim());
-		driver.findElement(By.xpath("//input[@value='Go!']")).click();
-		
-		System.out.println("Focused to the ShowCode");
-
-		driver.navigate().refresh();
-		
-
-		WebElement element = driver.findElement(By.id("CellServerName"));
-		
-		//Get the server name from excel and validate the same
-		String Row7ServerName = xls.getCellData("Pre Req Servers", serverNameColumn, row);
-
-		Assert.assertTrue(element.getText().contains(Row7ServerName.trim()),element.getText() + " was appeared instead of " + Row7ServerName);
-
-		System.out.println("Test for Row 7 executed successfully");
-		driver.findElement(By.xpath("//a[@class='Logout']")).click();
-		System.out.println("Logged Out Successfully");
-
-	}
-
-	@Test(priority = 6, retryAnalyzer = CustomReporter.RetryListener.class, enabled=false)
-	public void executeRow7() throws Exception {
-
-		row = 7;
-		//start the chrome browser and login 
-		
-		driver = BrowserFactory.getBrowser("ChromeOptions");
-		wait = new WebDriverWait(driver, 120);
-		
-				
-		String Row9Link = xls.getCellData("Pre Req Servers", LinkColumn, row).trim();
-		
-//		driver.get(Row9Link.trim());
-		
-		String uatsecuusername ="uatsecuremit\\youngs";
-		String uatpassword = "Bootsie69";
-		
-		StringBuffer strBuf = new StringBuffer(Row9Link.trim());
-		strBuf.insert(7, uatsecuusername + ":" + uatpassword + "@");
-		
-		driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
-		driver.findElement(By.id("url")).sendKeys((Row9Link.trim()));
-		driver.findElement(By.id("username")).sendKeys(uatsecuusername);
-		driver.findElement(By.id("password")).sendKeys(uatpassword);
-		driver.findElement(By.className("credential-form-submit")).click();
-		driver.get(Row9Link);
-		Thread.sleep(2000);
-		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		
-		// Verify errors on page
-		Assert.assertFalse(driver.getCurrentUrl().toLowerCase().contains("error"), "Page shows Appology Error");
-		Assert.assertFalse(driver.getTitle().toLowerCase().contains("404"), "Page shows 404 Error");
-		Assert.assertFalse(driver.getTitle().toLowerCase().contains("403"), "Page shows 403 Error");
-		Assert.assertFalse(driver.getTitle().toLowerCase().contains("Not Found"), "Page shows 'Not Found' error");
-		Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'Error')]")).size()>0 , "Page has Error");		
-		System.out.println("Test for Row 9 executed successfully");
-
-	}
-
-	@Test(priority = 7, retryAnalyzer = CustomReporter.RetryListener.class, enabled=false)
-	public void executeRow8() throws IOException{
-
-		row = 8;
-		
-		//Start the Chrome browser and login 		
-		driver = BrowserFactory.getBrowser("Chrome");
-		
-		String Row10Link = xls.getCellData("Pre Req Servers", LinkColumn, row);
-		driver.get(Row10Link.trim());
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='Username']")).sendKeys(config.getsecuremitUserID());
-		driver.findElement(By.xpath("//input[@id='Password']")).sendKeys(config.getsecuremitpsw());
-		driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		
-		// verify errors on page
-		Assert.assertFalse(driver.getCurrentUrl().toLowerCase().contains("error"), "Page shows Appology Error");
-		Assert.assertFalse(driver.getTitle().toLowerCase().contains("404"), "Page shows 404 Error");
-		Assert.assertFalse(driver.getTitle().toLowerCase().contains("403"), "Page shows 403 Error");
-		Assert.assertFalse(driver.findElements(By.xpath("//*[starts-with(@*,'error')]")).size()>0 , "Page has Error");		
-		System.out.println("Test for Row 10 executed successfully");
-	}
-
-	@AfterTest
+	@AfterMethod
 	public void quitBrowser() throws Exception {
 		driver.quit();
 	}
