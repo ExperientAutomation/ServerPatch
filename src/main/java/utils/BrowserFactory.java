@@ -62,7 +62,7 @@ public class BrowserFactory {
 			case "Chrome":
 				driver = drivers.get("Chrome");
 //				if (driver == null) {
-					System.setProperty("webdriver.chrome.driver", config.getChromePath());
+					System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 					driver = new ChromeDriver();
 					drivers.put("Chrome", driver);
 					driver.manage().window().maximize();

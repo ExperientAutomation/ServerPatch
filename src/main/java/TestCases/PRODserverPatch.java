@@ -54,7 +54,7 @@ public class PRODserverPatch extends BrowserFactory {
 	@BeforeClass	
 	public void initialization() throws IOException, Exception {
 
-		downloadedfile.downloadExcelSheet("PROD Server Patch Automation");			
+//		downloadedfile.downloadExcelSheet("PROD Server Patch Automation");			
 		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
 		xls = new XlsUtil(filepath.getAbsolutePath());
 		getColumn();
@@ -209,8 +209,8 @@ public class PRODserverPatch extends BrowserFactory {
 		sel.selectByValue("ENT");
 		driver.navigate().refresh();
 		
-		int loginPage = driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size();
-		if(loginPage>0) login.login(driver);
+//		int loginPage = driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size();
+//		if(loginPage>0) login.login(driver);
 
 		element = driver.findElement(By.id("CellServerName"));
 
@@ -267,8 +267,8 @@ public class PRODserverPatch extends BrowserFactory {
 		sel.selectByValue("ENT");
 		driver.navigate().refresh();
 		
-		int loginPage = driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size();
-		if(loginPage>0) login.login(driver);
+//		int loginPage = driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size();
+//		if(loginPage>0) login.login(driver);
 		
 		element = driver.findElement(By.id("CellServerName"));
 

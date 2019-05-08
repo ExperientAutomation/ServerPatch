@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -61,12 +62,13 @@ public class LEADserverPatch extends BrowserFactory {
 	@Test(priority = 0, enabled = true)
 	public void executeRow2to9() throws Exception {	
 	
+		driver = BrowserFactory.getBrowser("Chrome");
 
 		for (row = 2; row <= 9; row++) {
 			
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
-			driver = BrowserFactory.getBrowser("Chrome");
+			
 			
 			System.out.println("URL-"+linkToTest);
 			driver.get(linkToTest);
@@ -74,12 +76,15 @@ public class LEADserverPatch extends BrowserFactory {
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
 		}
-
 	}
 
 	@Test(priority = 1, enabled = true)
 	public void executeRow10to13() throws Exception {
-			
+		
+//		Calling Chrome browser to add Multi pass extension 
+		driver = BrowserFactory.getBrowser("ChromeOptions"); 
+		driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
+		
 		for (row = 10; row <= 13; row++) {
 
 			System.out.println("Starting execution row number " + row);
@@ -94,11 +99,8 @@ public class LEADserverPatch extends BrowserFactory {
 			// + "@")));
 
 			// String linkToTest = strBuf.toString();
-			// System.out.println("Updated URL= "+linkToTest);
-			
-//			Calling Chrome browser to add Multi pass extension 
-			driver = BrowserFactory.getBrowser("ChromeOptions"); 
-			driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
+			// System.out.println("Updated URL= "+linkToTest);			
+
 			driver.findElement(By.id("url")).sendKeys(url);
 			driver.findElement(By.id("username")).sendKeys(config.LoginCredentails("USER_NAME"));
 			driver.findElement(By.id("password")).sendKeys(config.LoginCredentails("PASSWORD"));
@@ -118,20 +120,19 @@ public class LEADserverPatch extends BrowserFactory {
 			
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
-		}
-			
+		}		
 	}
 
 	@Test(priority = 3, enabled = true)
 	public void executeRows14to17() throws Exception {
+		
+		driver = BrowserFactory.getBrowser("Chrome");
 
 		for (row = 14; row <= 17; row++) {
 
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
-			driver = BrowserFactory.getBrowser("Chrome");
-			driver.get(linkToTest);			
-			
+			driver.get(linkToTest);				
 
 			wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(
@@ -144,12 +145,13 @@ public class LEADserverPatch extends BrowserFactory {
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
 		}
-
 	}
 
 	@Test(priority = 4, enabled = true)
 	public void executeRow18to21() throws Exception {
 	
+		driver = BrowserFactory.getBrowser("Chrome");
+		
 		for (row = 18; row <= 21; row++) {
 
 			System.out.println("Starting execution row number " + row);
@@ -157,7 +159,6 @@ public class LEADserverPatch extends BrowserFactory {
 			int fail = 0;
 			StringBuffer allErrors = new StringBuffer();
 
-			driver = BrowserFactory.getBrowser("Chrome");
 			driver.get(linkToTest);			
 
 			wait = new WebDriverWait(driver, 60);
@@ -268,7 +269,6 @@ public class LEADserverPatch extends BrowserFactory {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
 			}
 
 			// Testing all the tabs under Query Builder tab
@@ -338,31 +338,31 @@ public class LEADserverPatch extends BrowserFactory {
 
 			System.out.println("Executed row number " + row);
 		}
-
 	}
 
 	@Test(priority = 5, enabled = true)
 	public void executeRow30to33() throws Exception {
+		
+		driver = BrowserFactory.getBrowser("Chrome");
 
 		for (row = 30; row <= 33; row++) {
 
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
 
-			driver = BrowserFactory.getBrowser("Chrome");
 			driver.get(linkToTest);				
 
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
 		}
-
 	}
 
 	@Test(priority = 2, enabled = true)
-	public void executeRow34to37() throws Exception {		
-		
-		
-//		driver = BrowserFactory.getBrowser("Chrome");		
+	public void executeRow34to37() throws Exception {			
+
+//		Calling Chrome browser to add Multi pass extension 
+		driver = BrowserFactory.getBrowser("ChromeOptions"); 		
+		driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
 
 		for (row = 34; row <= 37; row++) {
 
@@ -379,12 +379,9 @@ public class LEADserverPatch extends BrowserFactory {
 			 driver.get(linkToTest); 
 			 
 			 driver.get(linkToTest);*/
-
-//			Calling Chrome browser to add Multi pass extension 
-			driver = BrowserFactory.getBrowser("ChromeOptions"); 
-			wait = new WebDriverWait(driver, 60);
 			
-			driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
+			wait = new WebDriverWait(driver, 60);			
+		
 			driver.findElement(By.id("url")).sendKeys(url);
 			driver.findElement(By.id("username")).sendKeys(config.LoginCredentails("USER_NAME"));
 			driver.findElement(By.id("password")).sendKeys(config.LoginCredentails("PASSWORD"));
@@ -400,22 +397,20 @@ public class LEADserverPatch extends BrowserFactory {
 
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
-		}
-			driver.close();
+		}			
 	}
 
 	@Test(priority = 6, enabled = true)
 	public void executeRow42to45() throws Exception {
+		
+		driver = BrowserFactory.getBrowser("Chrome");
 
 		for (row = 42; row <= 45; row++) {
 
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
 
-			driver = BrowserFactory.getBrowser("Chrome");
-			driver.get(linkToTest);
-			
-			
+			driver.get(linkToTest);		
 
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
@@ -425,13 +420,14 @@ public class LEADserverPatch extends BrowserFactory {
 
 	@Test(priority = 7, enabled = true)
 	public void executeRow46to49() throws Exception {
+		
+		driver = BrowserFactory.getBrowser("Chrome");
 
 		for (row = 46; row <= 49; row++) {
 
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
 
-			driver = BrowserFactory.getBrowser("Chrome");
 			driver.get(linkToTest);				
 
 			wait = new WebDriverWait(driver, 60);
@@ -453,13 +449,14 @@ public class LEADserverPatch extends BrowserFactory {
 
 	@Test(priority = 8, enabled = true)
 	public void executeRow51to54() throws Exception {
+		
+		driver = BrowserFactory.getBrowser("Chrome");
 
 		for (row = 51; row <= 54; row++) {
 
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
 
-			driver = BrowserFactory.getBrowser("Chrome");
 			driver.get(linkToTest);					
 
 			wait = new WebDriverWait(driver, 60);
@@ -516,12 +513,12 @@ public class LEADserverPatch extends BrowserFactory {
 
 		}
 
-	@AfterSuite
+	@AfterMethod
 	public void tearDown() throws Exception {		
 		driver.quit();
 	}
 
-	@AfterClass(enabled = true)
+	@AfterSuite(enabled = true)
 	public void sendReport() throws Exception {
 		Thread.sleep(1000);
 		emailReportLead sendReport = new emailReportLead();
