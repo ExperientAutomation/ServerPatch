@@ -28,11 +28,11 @@ public class WinUtils {
 			if (driver.getWindowHandles().size() == num) {
 				for (String handle : driver.getWindowHandles()) {
 					driver.switchTo().window(handle);
-					Thread.sleep(1000);
+					Thread.sleep(5000);
 				}
 				
 			} else {
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			}
 	}
 	

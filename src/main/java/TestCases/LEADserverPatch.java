@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -22,8 +21,8 @@ import utils.latestFile;
 public class LEADserverPatch extends BrowserFactory {
 
 	// Declare the Test type as Pre OR Post
-//	 public final String testType = "Pre-Test";
-	public final String testType = "Post-Test";	 
+	 public final String testType = "Pre-Test";
+//	public final String testType = "Post-Test";	 
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 5;
@@ -67,8 +66,7 @@ public class LEADserverPatch extends BrowserFactory {
 		for (row = 2; row <= 9; row++) {
 			
 			System.out.println("Starting execution row number " + row);
-			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
-			
+			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);			
 			
 			System.out.println("URL-"+linkToTest);
 			driver.get(linkToTest);
@@ -83,8 +81,7 @@ public class LEADserverPatch extends BrowserFactory {
 		
 //		Calling Chrome browser to add Multi pass extension 
 		driver = BrowserFactory.getBrowser("ChromeOptions"); 
-		driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
-		
+				
 		for (row = 10; row <= 13; row++) {
 
 			System.out.println("Starting execution row number " + row);
@@ -92,7 +89,7 @@ public class LEADserverPatch extends BrowserFactory {
 			System.out.println("URL = " + url);
 
 			// StringBuffer strBuf = new StringBuffer(url);
-			// strBuf.insert(7, config.getshowManagerUserID() + ":" +
+//			 strBuf.insert(7, config.getshowManagerUserID() + ":" +
 			// config.getshowManagerPsw() + "@");
 			// System.out.println("URL without converting = "+(strBuf.insert(7,
 			// config.getshowManagerUserID() + ":" + config.getshowManagerPsw()
@@ -101,6 +98,7 @@ public class LEADserverPatch extends BrowserFactory {
 			// String linkToTest = strBuf.toString();
 			// System.out.println("Updated URL= "+linkToTest);			
 
+			driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
 			driver.findElement(By.id("url")).sendKeys(url);
 			driver.findElement(By.id("username")).sendKeys(config.LoginCredentails("USER_NAME"));
 			driver.findElement(By.id("password")).sendKeys(config.LoginCredentails("PASSWORD"));
@@ -361,8 +359,7 @@ public class LEADserverPatch extends BrowserFactory {
 	public void executeRow34to37() throws Exception {			
 
 //		Calling Chrome browser to add Multi pass extension 
-		driver = BrowserFactory.getBrowser("ChromeOptions"); 		
-		driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
+		driver = BrowserFactory.getBrowser("ChromeOptions"); 				
 
 		for (row = 34; row <= 37; row++) {
 
@@ -380,19 +377,21 @@ public class LEADserverPatch extends BrowserFactory {
 			 
 			 driver.get(linkToTest);*/
 			
-			wait = new WebDriverWait(driver, 60);			
-		
+			
+			driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
 			driver.findElement(By.id("url")).sendKeys(url);
 			driver.findElement(By.id("username")).sendKeys(config.LoginCredentails("USER_NAME"));
 			driver.findElement(By.id("password")).sendKeys(config.LoginCredentails("PASSWORD"));
 			driver.findElement(By.className("credential-form-submit")).click();
 			driver.get(url);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 
+			wait = new WebDriverWait(driver, 60);			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("TextBoxShowCode")));
 
 			String showCode = xls.getCellData("Prod Servers", showCodeColumn, row);
 			driver.findElement(By.id("TextBoxShowCode")).sendKeys(showCode, Keys.ENTER);
+			Thread.sleep(3000);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("TextBoxShowCode")));
 
 			testErrorOnPage(driver, row);
@@ -475,7 +474,7 @@ public class LEADserverPatch extends BrowserFactory {
 	}
 	
 	// This method validates various errors on the page
-		public void testErrorOnPage(WebDriver ldriver, int lrow) throws Exception {
+	public void testErrorOnPage(WebDriver ldriver, int lrow) throws Exception {
 
 			if (ldriver.getCurrentUrl().toLowerCase().contains("error")) {
 				Thread.sleep(1000);

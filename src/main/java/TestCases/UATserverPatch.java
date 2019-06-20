@@ -214,8 +214,7 @@ public class UATserverPatch extends BrowserFactory {
 		System.out.println("Test for Row-"+row+" executed successfully");
 		driver.findElement(By.xpath("//a[@class='Logout']")).click();
 		System.out.println("Logged Out Successfully");
-
-	}
+	}	
 
 	@AfterMethod
 	public void quitBrowser() throws Exception {

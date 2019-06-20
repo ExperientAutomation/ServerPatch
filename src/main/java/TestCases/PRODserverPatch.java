@@ -54,7 +54,7 @@ public class PRODserverPatch extends BrowserFactory {
 	@BeforeClass	
 	public void initialization() throws IOException, Exception {
 
-//		downloadedfile.downloadExcelSheet("PROD Server Patch Automation");			
+		downloadedfile.downloadExcelSheet("PROD Server Patch Automation");			
 		filepath = latestFile.lastFileModified(config.getServerPatchFilePath());
 		xls = new XlsUtil(filepath.getAbsolutePath());
 		getColumn();
@@ -81,7 +81,7 @@ public class PRODserverPatch extends BrowserFactory {
 		String RowLink = xls.getCellData("Sheet1", LinkColumn, row);
 		System.out.println("URL- "+RowLink);
 		driver.get(RowLink.trim());
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		
 		Assert.assertFalse(driver.getCurrentUrl().toLowerCase().contains("error"), "Page shows Appology Error");
 		Assert.assertFalse(driver.getTitle().toLowerCase().contains("404"), "Page shows 404 Error");
@@ -323,8 +323,8 @@ public class PRODserverPatch extends BrowserFactory {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		wait = new WebDriverWait(driver, 100);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Sign In']")));
-		Assert.assertTrue(driver.findElement(By.xpath("//button[text()='Sign In']")).isDisplayed(),"Exhibitor Portal site was not loaded");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[text()='Sign In']")));
+		Assert.assertTrue(driver.findElement(By.xpath("//h5[text()='Sign In']")).isDisplayed(),"Exhibitor Portal site was not loaded");
 		
 		System.out.println("Test for Row "+row+" executed successfully");
 

@@ -67,7 +67,7 @@ public class BrowserFactory {
 					drivers.put("Chrome", driver);
 					driver.manage().window().maximize();
 					driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+					driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 //				}
 				break;
 
@@ -76,7 +76,7 @@ public class BrowserFactory {
 //				if (driver == null) {
 					System.setProperty("webdriver.chrome.driver", config.getChromePath());
 					ChromeOptions cOptions = new ChromeOptions();
-					cOptions.addExtensions(new File("MultiPass-for-HTTP-basic-authentication_v0.7.4.crx"));
+					cOptions.addExtensions(new File("MultiPass-for-HTTP-basic-authentication_v0.8.4.crx"));
 					driver = new ChromeDriver(cOptions);
 					driver.manage().window().maximize();
 					drivers.put("ChromeOptions", driver);
@@ -85,7 +85,6 @@ public class BrowserFactory {
 //				}
 				break;
 			}
-
 		}
 
 		catch (Exception ex) {

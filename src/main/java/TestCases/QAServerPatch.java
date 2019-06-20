@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -28,8 +27,8 @@ public class QAServerPatch extends BrowserFactory {
 
 //  Declare the Test type as Pre OR Post	
 	
-//	public String testType = "Pre-Test";
-	public String testType = "Post-Test";
+	public String testType = "Pre-Test";
+//	public String testType = "Post-Test";
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 7;
@@ -117,6 +116,7 @@ public class QAServerPatch extends BrowserFactory {
 		for (int i = 0; i < listOfTabs.size(); i++) {
 
 			List<WebElement> listOfTabs1 = driver.findElements(By.xpath("//td[contains(@id,'WebMenuShow')]"));
+			System.out.println("Main Tab-"+listOfTabs1.get(i).getText());
 			listOfTabs1.get(i).click();
 			Thread.sleep(2000);
 
@@ -127,10 +127,11 @@ public class QAServerPatch extends BrowserFactory {
 
 				List<WebElement> listOfSubtabs1 = driver.findElements(By.xpath("//div[contains(@id,'MainNav_') and contains(@id,'Item_')]"));
 				String errorButton = listOfSubtabs1.get(j).getText();
+//				System.out.println("  Sub Tab Name-"+errorButton);
 				String mainWin = driver.getWindowHandle();
 
-				listOfSubtabs1.get(j).click();
-				Thread.sleep(2000);
+				listOfSubtabs1.get(j).click();			
+				Thread.sleep(5000);
 
 				if (driver.getWindowHandles().size() > 1)
 					util.switchIfWindowsAre(driver, 2);
@@ -142,7 +143,6 @@ public class QAServerPatch extends BrowserFactory {
 				results.add(testConnection(errorButton, showAllError));
 
 				if (driver.getWindowHandles().size() > 1) {
-
 					driver.close();
 					driver.switchTo().window(mainWin);
 				}
@@ -230,8 +230,7 @@ public class QAServerPatch extends BrowserFactory {
 		
 		System.out.println("Test for row - "+row+" executed successfully");
 		
-		if (results.contains(false)) Assert.fail("One of the links not working in row "+row);
-		
+		if (results.contains(false)) Assert.fail("One of the links not working in row "+row);		
 	}
 
 	@Test(priority = 2, enabled = true)
@@ -418,8 +417,7 @@ public class QAServerPatch extends BrowserFactory {
 		
 		//Get the URL from the excel and launch it
 		String Row12Link = xls.getCellData("Stage Servers", LinkColumn, row);
-		driver.get(Row12Link.trim());
-		
+		driver.get(Row12Link.trim());		
 		
 		//Login to showman
 //		if (driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size()>0)
@@ -443,7 +441,6 @@ public class QAServerPatch extends BrowserFactory {
 				} catch (AssertionError e) {
 					results.add(false);
 					showAllError.append(element.getText() + " was appeared instead of " + Row12ServerName + "\n");
-
 					xls.setCellData("Stage Servers", column + 1, row, showAllError.toString());
 				}
 		
@@ -511,7 +508,7 @@ public class QAServerPatch extends BrowserFactory {
 		if (results.contains(false)) Assert.fail("One of the links not working in Row-"+row);
 	}
 		
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 10, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow16() throws Exception {
 
 		row = 16;
@@ -520,7 +517,7 @@ public class QAServerPatch extends BrowserFactory {
 		driver = BrowserFactory.getBrowser("ChromeOptions");
 		wait = new WebDriverWait(driver, 100);		
 				
-		String Row16Link = xls.getCellData("Stage Servers", LinkColumn, row).trim();
+		String Row6Link = xls.getCellData("Stage Servers", LinkColumn, row).trim();
 		
 //		driver.get(Row9Link.trim());
 		
@@ -528,11 +525,11 @@ public class QAServerPatch extends BrowserFactory {
 		String uatpassword = config.getuatsecuremitpsw();
 		
 		driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
-		driver.findElement(By.id("url")).sendKeys((Row16Link.trim()));
+		driver.findElement(By.id("url")).sendKeys((Row6Link.trim()));
 		driver.findElement(By.id("username")).sendKeys(uatsecuusername);
 		driver.findElement(By.id("password")).sendKeys(uatpassword);
 		driver.findElement(By.className("credential-form-submit")).click();
-		driver.get(Row16Link);
+		driver.get(Row6Link);
 		Thread.sleep(2000);
 						
 		// Verify errors on page
@@ -545,7 +542,7 @@ public class QAServerPatch extends BrowserFactory {
 //		driver.close();
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 11,retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow17() throws IOException{
 
 		row = 17;
@@ -553,8 +550,8 @@ public class QAServerPatch extends BrowserFactory {
 		//Start the Chrome browser and login 		
 		driver = BrowserFactory.getBrowser("Chrome");
 		
-		String Row17Link = xls.getCellData("Stage Servers", LinkColumn, row);
-		driver.get(Row17Link.trim());
+		String Row7Link = xls.getCellData("Stage Servers", LinkColumn, row);
+		driver.get(Row7Link.trim());
 		
 		driver.findElement(By.xpath("//input[@id='Username']")).sendKeys(config.getsecuremitUserID());
 		driver.findElement(By.xpath("//input[@id='Password']")).sendKeys(config.getsecuremitpsw());
@@ -567,7 +564,6 @@ public class QAServerPatch extends BrowserFactory {
 //		Assert.assertFalse(driver.findElements(By.xpath("//*[starts-with(@*,'error')]")).size()>0 , "Page has Error");		
 		System.out.println("Test for row - "+row+" executed successfully");
 	}	
-	
 	//The below method will check for errors on page.
 	public Boolean testConnection(String errorButton, StringBuffer showAllError) {
 		

@@ -45,9 +45,9 @@ public class emailReportQA {
 			// message.setRecipients(Message.RecipientType.TO,
 			// InternetAddress.parse("mahesh.mishra@experient-inc.com,sreejak@infinite.com,Chandrasekar.kulandasamy@infinite.com,sandy.young@experient-inc.com"));
 			
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("sreejak@infinite.com,Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com"));
+//			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("sreejak@infinite.com,Chandrasekhar.Kulandasamy@experient-inc.com,Sirasanambati.Anudeep@infinite.com"));
 
-//			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Chandrasekhar.Kulandasamy@experient-inc.com"));
 			
 			spt = new QAServerPatch();
 			if (spt.testType.equalsIgnoreCase("Pre-Test"))
