@@ -21,8 +21,8 @@ import utils.latestFile;
 public class LEADserverPatch extends BrowserFactory {
 
 	// Declare the Test type as Pre OR Post
-	 public final String testType = "Pre-Test";
-//	public final String testType = "Post-Test";	 
+//	 public final String testType = "Pre-Test";
+	public final String testType = "Post-Test";	 
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 5;
@@ -417,7 +417,7 @@ public class LEADserverPatch extends BrowserFactory {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public void executeRow46to49() throws Exception {
 		
 		driver = BrowserFactory.getBrowser("Chrome");
