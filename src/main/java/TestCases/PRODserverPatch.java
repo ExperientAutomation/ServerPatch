@@ -59,7 +59,6 @@ public class PRODserverPatch extends BrowserFactory {
 		xls = new XlsUtil(filepath.getAbsolutePath());
 		getColumn();
 	}
-
 	
 	public int getColumn() {
 		if (testType == "Pre-Test") {
@@ -90,57 +89,11 @@ public class PRODserverPatch extends BrowserFactory {
 
 		System.out.println("Test for Row "+row+" executed successfully");
 
-	}
-
-	@Test(priority = 1, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
-	public void executeRow3() {
-		row = 3;
-
-		System.setProperty("webdriver.chrome.driver", config.getChromePath());
-		driver = new ChromeDriver();
-
-		driver.manage().window().maximize();
-		
-		String RowLink = xls.getCellData("Sheet1", LinkColumn, row);
-		System.out.println("URL- "+RowLink);
-		driver.get(RowLink.trim());
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		driver.findElement(By.id("UserName")).sendKeys(config.LoginCredentails("USER_NAME"));
-		driver.findElement(By.id("Password")).sendKeys(config.LoginCredentails("PASSWORD"));
-		driver.findElement(By.xpath("//input[@value='Log in']")).click();
-		
-		wait = new WebDriverWait(driver, 100);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Logout']")));
-		Assert.assertTrue(driver.findElement(By.xpath("//a[text()='Logout']")).isDisplayed(),"Could not Login");
-		
-		Assert.assertTrue(driver.findElement(By.xpath("//a[text()='Dashboard']")).isDisplayed(),"Home tab did not work to open Dashboard");
-		
-		driver.findElement(By.xpath("//a[text()='Events']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//h3[text()='Manage Events']")).isDisplayed(),"Events tab did not work to open Manage Events");
-		
-		driver.findElement(By.xpath("//a[text()='Groups']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//h3[text()='Manage Groups']")).isDisplayed(),"Groups tab did not work to open Manage Groups");
-		
-		driver.findElement(By.xpath("//a[text()='RAB']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//h3[text()='New/Pending Block Requests']")).isDisplayed(),"RAB tab did not work to open Block Requests");
-		
-		driver.findElement(By.xpath("//a[text()='People']")).click();
-		Assert.assertTrue(driver.findElement(By.id("LastName")).isDisplayed(),"People tab did not work to open Customer Search");
-		
-		driver.findElement(By.xpath("//a[text()='Reports']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//h3[text()='Manage Reports']")).isDisplayed(),"Reports tab did not work to open Manage Reports");
-		
-		driver.findElement(By.xpath("//a[text()='Logout']")).click();
-		Assert.assertTrue(driver.findElement(By.id("UserName")).isDisplayed(),"Did not Log Out");
-		
-		System.out.println("Test for Row  "+row+"  executed successfully");
-	}
+	}	
 
 	@Test(priority = 2, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow4() {
-		row = 4;
+		row = 3;
 
 		System.setProperty("webdriver.chrome.driver", config.getChromePath());
 		driver = new ChromeDriver();
@@ -162,68 +115,9 @@ public class PRODserverPatch extends BrowserFactory {
 
 	}
 
-	@Test(priority = 3, retryAnalyzer = CustomReporter.RetryListener.class, enabled = false)
-	public void executeRow5tes() throws Exception {
-		row = 5;
-		
-		System.setProperty("webdriver.chrome.driver", config.getChromePath());
-		driver = new ChromeDriver();
-
-		driver.manage().window().maximize();
-		
-		String RowLink = xls.getCellData("Sheet1", LinkColumn, row);
-		System.out.println("URL- "+RowLink);
-		driver.get(RowLink.trim());
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		login.login(driver);
-		wait = new WebDriverWait(driver, 100);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Logout')]")));
-		Assert.assertTrue(driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).isDisplayed(),"Could not Login");
-
-		driver.navigate().refresh();
-
-		WebElement element = driver.findElement(By.id("CellServerName"));
-
-		String RowServerNameShow = xls.getCellData("Sheet1", serverNameShowColumn, row);
-
-		Assert.assertTrue(element.getText().contains(RowServerNameShow.trim()), element.getText()+" was appeared instead of "+RowServerNameShow);
-
-        List<WebElement> b=driver.findElements(By.xpath("//td[contains(@id,'ctl00WebMenuShow')]"));
-		
-		for (int i=0; i<b.size(); i++) {
-			
-			List<WebElement> a=driver.findElements(By.xpath("//td[contains(@id,'ctl') and contains(@id,'WebMenuShow')]"));
-	        a.get(i).click();
-			Thread.sleep(2000);
-			
-			Assert.assertFalse(driver.getCurrentUrl().toLowerCase().contains("error"), "Page shows Appology Error");
-			Assert.assertFalse(driver.getTitle().toLowerCase().contains("404"), "Page shows 404 Error");
-			Assert.assertFalse(driver.getTitle().toLowerCase().contains("403"), "Page shows 403 Error");
-//			Assert.assertFalse(driver.findElements(By.xpath("//*[contains(.,'error')]")).size()>0 , "Page has Error");
-			
-		}
-		
-		Select sel = new Select(driver.findElement(By.id("ctl08_DropDownListMode")));
-		sel.selectByValue("ENT");
-		driver.navigate().refresh();
-		
-//		int loginPage = driver.findElements(By.xpath("//input[contains(@id,'Username') or contains(@id,'UserName')]")).size();
-//		if(loginPage>0) login.login(driver);
-
-		element = driver.findElement(By.id("CellServerName"));
-
-		String RowServerNameEnt = xls.getCellData("Sheet1", serverNameEnterpriseColumn, row);
-
-		Assert.assertTrue(element.getText().contains(RowServerNameEnt.trim()), element.getText()+" was appeared instead of "+RowServerNameEnt);
-		
-		System.out.println("Test for Row  "+row+"  executed successfully");
-	}
-
 	@Test(priority = 3, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow5() throws Exception {
-		row = 5;
+		row = 4;
 
 		System.setProperty("webdriver.chrome.driver", config.getChromePath());
 		driver = new ChromeDriver();
@@ -281,7 +175,7 @@ public class PRODserverPatch extends BrowserFactory {
 
 	@Test(priority = 4, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow6() {
-		row = 6;
+		row = 5;
 		
 		System.setProperty("webdriver.chrome.driver", config.getChromePath());
 		driver = new ChromeDriver();
@@ -309,7 +203,7 @@ public class PRODserverPatch extends BrowserFactory {
 
 	@Test(priority = 5, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow7() {
-		row = 7;
+		row = 6;
 
 		System.setProperty("webdriver.chrome.driver", config.getChromePath());
 		driver = new ChromeDriver();
@@ -332,7 +226,7 @@ public class PRODserverPatch extends BrowserFactory {
 
 	@Test(priority = 6, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeRow8() throws Exception {
-		row = 8;
+		row = 7;
 
 		System.setProperty("webdriver.chrome.driver", config.getChromePath());
 		driver = new ChromeDriver();
@@ -380,7 +274,7 @@ public class PRODserverPatch extends BrowserFactory {
     
     @Test(priority = 10, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
     public void executeRow10() throws Exception {
-       row = 9;    
+       row = 8;    
            List<Boolean> results = new ArrayList<Boolean>();
            StringBuffer showAllError = new StringBuffer();
 
@@ -434,7 +328,7 @@ public class PRODserverPatch extends BrowserFactory {
         
     @Test(priority = 11, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
     public void executeRow11() throws Exception {
-    	 row = 10;    
+    	 row = 9;    
          List<Boolean> results = new ArrayList<Boolean>();
          StringBuffer showAllError = new StringBuffer();
 
@@ -487,7 +381,7 @@ public class PRODserverPatch extends BrowserFactory {
 		
 	@Test(priority = 12, retryAnalyzer = CustomReporter.RetryListener.class, enabled = true)
 	public void executeLinkTest12() throws Exception{
-		row = 11 ;
+		row = 10 ;
 		
 		int numOfRows = xls.getRowCount("Sheet1");
 		

@@ -22,7 +22,7 @@ public class SM_SmokeTest {
 	
 	String ShowManagerURL = "http://rdqashowman.experientevent.com";
 	
-	String ShowCode = "LIZ627";
+	String ShowCode = "TST000";
 
 	WebDriver driver;
 	smlogin login = new smlogin();
