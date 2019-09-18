@@ -18,11 +18,11 @@ import CustomReporter.emailReportSM_SmokeTest;
 public class SM_SmokeTest {
 		
 
-//	String ShowManagerURL = "http://rdshowmanager.experientevent.com";
+//	String ShowManagerURL = "http://showmanager.experientevent.com";
 	
-	String ShowManagerURL = "http://rdqashowman.experientevent.com";
+	String ShowManagerURL = "http://qashowman.experientevent.com";
 	
-	String ShowCode = "TST000";
+	String ShowCode = "nbs627";
 
 	WebDriver driver;
 	smlogin login = new smlogin();
