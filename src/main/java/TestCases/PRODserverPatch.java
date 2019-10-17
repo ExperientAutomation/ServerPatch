@@ -14,7 +14,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import CustomReporter.emailReportPROD;
@@ -28,8 +27,9 @@ import utils.latestFile;
 public class PRODserverPatch extends BrowserFactory {
 
 	// Declare the Test type as Pre OR Post
-//	public String testType = "Pre-Test";
-	public String testType = "Post-Test";
+	
+	public String testType = "Pre-Test";
+//	public String testType = "Post-Test";
 
 	// Declare the column for Server Name
 	int serverNameEnterpriseColumn = 1;

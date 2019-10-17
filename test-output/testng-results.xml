@@ -1,173 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="10" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1719369" started-at="2019-09-12T13:00:45Z" finished-at="2019-09-12T13:29:24Z">
+  <suite name="Default suite" duration-ms="418534" started-at="2019-10-17T12:59:36Z" finished-at="2019-10-17T13:06:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1719369" started-at="2019-09-12T13:00:45Z" finished-at="2019-09-12T13:29:24Z">
-      <class name="TestCases.QAServerPatch">
-        <test-method status="PASS" signature="initialization()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="initialization" is-config="true" duration-ms="32007" started-at="2019-09-12T13:00:45Z" finished-at="2019-09-12T13:01:17Z">
+    <test name="Default test" duration-ms="418534" started-at="2019-10-17T12:59:36Z" finished-at="2019-10-17T13:06:35Z">
+      <class name="TestCases.LEADserverPatch">
+        <test-method status="PASS" signature="initialization()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="initialization" is-config="true" duration-ms="2318" started-at="2019-10-17T12:59:36Z" finished-at="2019-10-17T12:59:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method status="PASS" signature="executeRow4()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow4" duration-ms="513465" started-at="2019-09-12T13:01:17Z" finished-at="2019-09-12T13:09:50Z">
+        <test-method status="PASS" signature="executeRow2to9()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow2to9" duration-ms="52511" started-at="2019-10-17T12:59:38Z" finished-at="2019-10-17T13:00:31Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow4 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="1133" started-at="2019-09-12T13:09:53Z" finished-at="2019-09-12T13:09:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="executeRow5()[pri:1, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow5" duration-ms="397313" started-at="2019-09-12T13:09:55Z" finished-at="2019-09-12T13:16:32Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[One of the links not working in row 5]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: One of the links not working in row 5
-at org.testng.Assert.fail(Assert.java:96)
-at TestCases.QAServerPatch.executeRow5(QAServerPatch.java:233)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow5 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="1058" started-at="2019-09-12T13:16:34Z" finished-at="2019-09-12T13:16:36Z">
+        </test-method> <!-- executeRow2to9 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="827" started-at="2019-10-17T13:00:31Z" finished-at="2019-10-17T13:00:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow6()[pri:2, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow6" duration-ms="21842" started-at="2019-09-12T13:16:36Z" finished-at="2019-09-12T13:16:57Z">
+        <test-method status="PASS" signature="executeRow10to13()[pri:1, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow10to13" duration-ms="65648" started-at="2019-10-17T13:00:32Z" finished-at="2019-10-17T13:01:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow6 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="801" started-at="2019-09-12T13:17:00Z" finished-at="2019-09-12T13:17:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="FAIL" signature="executeRow9()[pri:5, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow9" duration-ms="570268" started-at="2019-09-12T13:17:01Z" finished-at="2019-09-12T13:26:32Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[One of the links not working in Row-9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: One of the links not working in Row-9
-at org.testng.Assert.fail(Assert.java:96)
-at TestCases.QAServerPatch.executeRow9(QAServerPatch.java:360)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow9 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="1095" started-at="2019-09-12T13:26:34Z" finished-at="2019-09-12T13:26:35Z">
+        </test-method> <!-- executeRow10to13 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="827" started-at="2019-10-17T13:01:37Z" finished-at="2019-10-17T13:01:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow10()[pri:6, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow10" duration-ms="39172" started-at="2019-09-12T13:26:35Z" finished-at="2019-09-12T13:27:14Z">
+        <test-method status="PASS" signature="executeRow34to37()[pri:2, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow34to37" duration-ms="57276" started-at="2019-10-17T13:01:38Z" finished-at="2019-10-17T13:02:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow10 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="835" started-at="2019-09-12T13:27:16Z" finished-at="2019-09-12T13:27:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow11()[pri:7, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow11" duration-ms="35153" started-at="2019-09-12T13:27:17Z" finished-at="2019-09-12T13:27:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow11 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="846" started-at="2019-09-12T13:27:55Z" finished-at="2019-09-12T13:27:56Z">
+        </test-method> <!-- executeRow34to37 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="1008" started-at="2019-10-17T13:02:36Z" finished-at="2019-10-17T13:02:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow12()[pri:8, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow12" duration-ms="8115" started-at="2019-09-12T13:27:56Z" finished-at="2019-09-12T13:28:04Z">
+        <test-method status="PASS" signature="executeRows14to17()[pri:3, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRows14to17" duration-ms="26640" started-at="2019-10-17T13:02:37Z" finished-at="2019-10-17T13:03:03Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow12 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="799" started-at="2019-09-12T13:28:08Z" finished-at="2019-09-12T13:28:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow13()[pri:9, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow13" duration-ms="8030" started-at="2019-09-12T13:28:09Z" finished-at="2019-09-12T13:28:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow13 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="742" started-at="2019-09-12T13:28:22Z" finished-at="2019-09-12T13:28:23Z">
+        </test-method> <!-- executeRows14to17 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="843" started-at="2019-10-17T13:03:03Z" finished-at="2019-10-17T13:03:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow16()[pri:10, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow16" duration-ms="17154" started-at="2019-09-12T13:28:23Z" finished-at="2019-09-12T13:28:40Z">
+        <test-method status="PASS" signature="executeRow18to21()[pri:4, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow18to21" duration-ms="133516" started-at="2019-10-17T13:03:04Z" finished-at="2019-10-17T13:05:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- executeRow16 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="857" started-at="2019-09-12T13:28:42Z" finished-at="2019-09-12T13:28:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="executeRow17()[pri:11, instance:TestCases.QAServerPatch@604ed9f0]" name="executeRow17" duration-ms="37687" started-at="2019-09-12T13:28:43Z" finished-at="2019-09-12T13:29:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeRow17 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="tearDown" is-config="true" duration-ms="809" started-at="2019-09-12T13:29:23Z" finished-at="2019-09-12T13:29:24Z">
+        </test-method> <!-- executeRow18to21 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="920" started-at="2019-10-17T13:05:18Z" finished-at="2019-10-17T13:05:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="sendReport()[pri:0, instance:TestCases.QAServerPatch@604ed9f0]" name="sendReport" is-config="true" duration-ms="1456" started-at="2019-09-12T13:29:24Z" finished-at="2019-09-12T13:29:26Z">
+        <test-method status="PASS" signature="executeRow30to33()[pri:5, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow30to33" duration-ms="22223" started-at="2019-10-17T13:05:18Z" finished-at="2019-10-17T13:05:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow30to33 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="813" started-at="2019-10-17T13:05:41Z" finished-at="2019-10-17T13:05:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="executeRow42to45()[pri:6, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow42to45" duration-ms="21991" started-at="2019-10-17T13:05:42Z" finished-at="2019-10-17T13:06:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow42to45 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="943" started-at="2019-10-17T13:06:04Z" finished-at="2019-10-17T13:06:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="executeRow47to50()[pri:7, instance:TestCases.LEADserverPatch@1bce4f0a]" name="executeRow47to50" duration-ms="29157" started-at="2019-10-17T13:06:04Z" finished-at="2019-10-17T13:06:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeRow47to50 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="tearDown" is-config="true" duration-ms="975" started-at="2019-10-17T13:06:34Z" finished-at="2019-10-17T13:06:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="sendReport()[pri:0, instance:TestCases.LEADserverPatch@1bce4f0a]" name="sendReport" is-config="true" duration-ms="1320" started-at="2019-10-17T13:06:35Z" finished-at="2019-10-17T13:06:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendReport -->
-      </class> <!-- TestCases.QAServerPatch -->
+      </class> <!-- TestCases.LEADserverPatch -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

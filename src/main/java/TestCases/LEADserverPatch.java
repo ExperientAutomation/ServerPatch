@@ -21,8 +21,8 @@ import utils.latestFile;
 public class LEADserverPatch extends BrowserFactory {
 
 	// Declare the Test type as Pre OR Post
-//	 public final String testType = "Pre-Test";
-	public final String testType = "Post-Test";	 
+	 public final String testType = "Pre-Test";
+//	public final String testType = "Post-Test";	 
 
 	// Declare the column for ShowCode
 	int showCodeColumn = 5;
@@ -203,18 +203,8 @@ public class LEADserverPatch extends BrowserFactory {
 						
 						allErrors.append("Failed to load " + errorTabName + "\n");
 						fail++;
-
-					} 
+					} 					
 					
-					/*else if (driver.findElements(By.xpath("//*[starts-with(@*,'error')]")).size() > 0) {
-
-						System.out.println("Failed to load " + errorTabName);
-						driver.navigate().back();
-						
-						allErrors.append("Failed to load " + errorTabName + "\n");
-						fail++;
-					}*/
-
 				} catch (Exception e) {
 
 					e.printStackTrace();
@@ -366,18 +356,7 @@ public class LEADserverPatch extends BrowserFactory {
 			System.out.println("Starting execution row number " + row);
 			String url = xls.getCellData("Prod Servers", LinkColumn, row);
 			System.out.println("URL = " +url);			
-			
-			/* StringBuffer strBuf = new StringBuffer(url); strBuf.insert(7,
-			config.LoginCredentails("USER_NAME") + ":" + config.LoginCredentails("PASSWORD") + "@"); 			
-			 String linkToTest = strBuf.toString();			
-			 System.out.println("URL:"+linkToTest);
-			 
-			 driver = BrowserFactory.getBrowser("Chrome");
-			 driver.get(linkToTest); 
-			 
-			 driver.get(linkToTest);*/
-			
-			
+							
 			driver.get("chrome-extension://enhldmjbphoeibbpdhmjkchohnidgnah/options.html");
 			driver.findElement(By.id("url")).sendKeys(url);
 			driver.findElement(By.id("username")).sendKeys(config.LoginCredentails("USER_NAME"));
@@ -417,46 +396,17 @@ public class LEADserverPatch extends BrowserFactory {
 
 	}
 
-	@Test(priority = 7, enabled = false)
-	public void executeRow46to49() throws Exception {
+	@Test(priority = 7, enabled = true)
+	public void executeRow47to50() throws Exception {
 		
 		driver = BrowserFactory.getBrowser("Chrome");
 
-		for (row = 46; row <= 49; row++) {
+		for (row = 47; row <= 50; row++) {
 
 			System.out.println("Starting execution row number " + row);
 			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
 
 			driver.get(linkToTest);				
-
-			wait = new WebDriverWait(driver, 60);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ContentMain_TextBoxActCode")));
-
-			String actCode = xls.getCellData("Prod Servers", 4, row);
-			driver.findElement(By.id("ContentMain_TextBoxActCode")).sendKeys(actCode);
-
-			String accKey = xls.getCellData("Prod Servers", 5, row);
-			driver.findElement(By.id("ContentMain_TextBoxKey")).sendKeys(accKey);
-
-			driver.findElement(By.id("ContentMain_ButtonSubmit")).click();
-
-			testErrorOnPage(driver, row);
-			System.out.println("Executed row number " + row);
-		}
-
-	}
-
-	@Test(priority = 8, enabled = true)
-	public void executeRow51to54() throws Exception {
-		
-		driver = BrowserFactory.getBrowser("Chrome");
-
-		for (row = 51; row <= 54; row++) {
-
-			System.out.println("Starting execution row number " + row);
-			String linkToTest = xls.getCellData("Prod Servers", LinkColumn, row);
-
-			driver.get(linkToTest);					
 
 			wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("MainContent_TextBoxActivationCode_zip")));
@@ -470,7 +420,6 @@ public class LEADserverPatch extends BrowserFactory {
 			testErrorOnPage(driver, row);
 			System.out.println("Executed row number " + row);
 		}
-
 	}
 	
 	// This method validates various errors on the page
@@ -497,19 +446,11 @@ public class LEADserverPatch extends BrowserFactory {
 				xls.setCellData("Prod Servers", column - 1, lrow, System.getProperty("user.name"));
 				xls.setCellData("Prod Servers", column + 1, lrow, "Error 404 was occured");
 
-			} /*else if (ldriver.findElements(By.xpath("//*[starts-with(@*,'error')]")).size() > 0) {
-				Thread.sleep(1000);
-				System.out.println("Failed");
-				xls.setCellData("Prod Servers", column, lrow, "Failed");
-				xls.setCellData("Prod Servers", column - 1, lrow, System.getProperty("user.name"));
-				xls.setCellData("Prod Servers", column + 1, lrow, "The Page was not loaded Or there is Error on page");
-
-			}*/ else {
+			} else {
 				Thread.sleep(1000);
 				xls.setCellData("Prod Servers", column, lrow, "Pass");
 				xls.setCellData("Prod Servers", column - 1, lrow, System.getProperty("user.name"));
 			}
-
 		}
 
 	@AfterMethod
