@@ -23,7 +23,8 @@ public class emailReportQA {
 	@Test
 	public void sendEmail(String filePath) {
 		
-		final String username = config.LoginCredentails("USER_NAME");		
+//		final String username = config.LoginCredentails("USER_NAME");	
+		final String username = config.LoginCredentails("USER_EMAILID");
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", false);
@@ -87,7 +88,6 @@ public class emailReportQA {
 	        	html = "<p>Hi,</p><p>PFA the Automation Test report.</p><p>Note: There are "+count+" failures.. </p><p>Thanks,</p><p>Chandra</p>";
 	        }
 	        
-
 			messageBodyPart.setContent(html, "text/html");
 			multipart.addBodyPart(messageBodyPart);
 			multipart.addBodyPart(attachmentPart);
